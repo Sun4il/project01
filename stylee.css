@@ -1,0 +1,322 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background: linear-gradient(to right, #e70c0c, rgba(226, 11, 137, 0.918));
+    min-height: 100vh;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.container {
+    max-width: 1000px;
+    padding: 20px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.image-hotspot {
+    max-width: 550px;
+    margin: 50px auto 0 auto;
+    position: relative;
+}
+
+.image-hotspot img {
+    max-width: 100%;
+    box-shadow: 0 0 100px 0 rgba(40, 228, 3, 0.5);
+    border-radius: 37px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    border: 3px solid #fff;
+    background: #8e44ad;
+    cursor: pointer;
+}
+
+.icon:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%) scale(1, 1);
+    pointer-events: none;
+    content: "";
+    display: block;
+    width: 26.4px;
+    height: 26.4px;
+    border-radius: 100%;
+    border: 1px solid #8e44ad;
+    transition: border-color 1s linear;
+    animation: icon-pulse 4s linear infinite;
+}
+
+@keyframes icon-pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1, 1);
+        opacity: 0.9;
+    }
+    20% {
+        transform: translate(-50%, -50%) scale(1.5, 1.5);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(2, 2);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2, 2);
+        opacity: 0;
+    }
+}
+
+.item {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.tooltip {
+    position: absolute;
+    padding: 15px;
+    width: 13em;
+    height: 7em;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    line-height: 1.5em;
+    pointer-events: none;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.1s linear;
+}
+
+.item:hover .tooltip {
+    opacity: 1;
+}
+
+.tooltip h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Tooltip Positions */
+
+/* Position for A */
+.A .tooltip {
+    left: calc(50% - 6.5em);
+    bottom: 40px;
+}
+
+.A .tooltip:after {
+    color: #fff;
+    position: absolute;
+    content: "";
+    bottom: -13px;
+    border-top: 13px solid;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    left: calc(50% - 13px);
+}
+
+/* Position for B */
+.B .tooltip {
+    left: calc(50% - 6.5em);
+    top: 40px;
+}
+
+.B .tooltip:after {
+    color: #fff;
+    position: absolute;
+    content: "";
+    top: -13px;
+    border-bottom: 13px solid;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    left: calc(50% - 13px);
+}
+
+/* Position for C */
+.C .tooltip {
+    left: calc(50% - 6.5em);
+    top: 40px;
+}
+
+.C .tooltip:after {
+    color: #fff;
+    position: absolute;
+    content: "";
+    top: -13px;
+    border-bottom: 13px solid;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    left: calc(50% - 13px);
+}
+
+/* Position for D */
+.D .tooltip {
+    left: calc(50% - 6.5em);
+    top: 40px;
+}
+
+.D .tooltip:after {
+    color: #fff;
+    position: absolute;
+    content: "";
+    top: -13px;
+    border-bottom: 13px solid;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    left: calc(50% - 13px);
+}
+
+/* Position for E */
+.E .tooltip {
+    bottom: calc(50% - 3.5em);
+    left: 40px;
+}
+
+.E .tooltip:after {
+    color: #fff;
+    position: absolute;
+    content: "";
+    left: -13px;
+    border-right: 13px solid;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    top: calc(50% - 13px);
+}
+
+/* Position for F */
+.B .tooltip {
+    bottom: calc(50% - 6.5em);
+    right: 40px;
+}
+
+.B .tooltip:after {
+    color: #fff;
+    position: absolute;
+    content: "";
+    right: -13px;
+    border-left: 13px solid;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    top: calc(50% - 13px);
+}
+
+/* Position for G */
+.G .tooltip {
+    bottom: calc(50% - 3.5em);
+    left: 40px;
+}
+
+.G .tooltip:after {
+    color: #fff;
+    position: absolute;
+    content: "";
+    left: -13px;
+    border-right: 13px solid;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    top: calc(50% - 13px);
+}
+
+/* Media Queries for responsiveness */
+
+/* Mobile and Tablets */
+@media only screen and (max-width: 1024px) {
+    /* Adjusting tooltip positions on smaller screens */
+    .A .tooltip {
+        left: calc(50% - 6.5em);
+        bottom: 50px;
+    }
+    .B .tooltip {
+        left: calc(50% - 6.5em);
+        top: 50px;
+    }
+    .C .tooltip {
+        left: calc(50% - 6.5em);
+        top: 50px;
+    }
+    .D .tooltip {
+        left: calc(50% - 6.5em);
+        top: 50px;
+    }
+    .E .tooltip {
+        bottom: calc(50% - 3.5em);
+        left: 45px;
+    }
+    .B .tooltip {
+        bottom: calc(50% - 6.5em);
+        right: 45px;
+    }
+    .G .tooltip {
+        bottom: calc(50% - 3.5em);
+        left: 45px;
+    }
+}
+
+/* Small mobile screens */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .image-hotspot {
+        max-width: 100%;
+    }
+
+    /* Adjusting tooltips for small screens */
+    .A .tooltip {
+        left: 50%;
+        bottom: 50px;
+        transform: translateX(-50%);
+    }
+    .B .tooltip {
+        left: 50%;
+        top: 50px;
+        transform: translateX(-50%);
+    }
+    .C .tooltip {
+        left: 50%;
+        top: 50px;
+        transform: translateX(-50%);
+    }
+    .D .tooltip {
+        left: 50%;
+        top: 50px;
+        transform: translateX(-50%);
+    }
+    .E .tooltip {
+        left: 50%;
+        bottom: 50px;
+        transform: translateX(-50%);
+    }
+    .B .tooltip {
+        left: 50%;
+        bottom: 50px;
+        transform: translateX(-50%);
+    }
+    .G .tooltip {
+        left: 50%;
+        bottom: 50px;
+        transform: translateX(-50%);
+    }
+}
